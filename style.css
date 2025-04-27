@@ -1,0 +1,951 @@
+/* Theme and styles provided by the user */
+:root {
+    --primary-color: #6200ea;
+    --bg-dark: #0f0f0f;
+    --text-light: #ffffff;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Kanit', sans-serif;   
+    overflow-x: hidden;
+    position: relative; /* Added for correct pseudoelements */
+    line-height: 1.6; /* Increased line spacing */
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 5%; /* Reduced top/bottom padding */
+    position: fixed;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+}
+
+.nav-links a {
+    margin: 0 0.8rem; /* Reduced spacing between links */
+    color: var(--text-light);
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+    font-size: 1rem; /* Slightly reduced font size */
+}
+
+/* Hover Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* WN Logo Style */
+.logo-wn {
+    font-size: 1.6rem; /* Adjusted logo size */
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(98, 0, 234, 0.1);
+    padding: 0.4rem 1.2rem; /* Adjusted padding */
+    border-radius: 50px;
+    transition: 0.3s;
+    text-decoration: none; /* Removed underline */
+}
+
+/* เอฟเฟกต์เมื่อ hover */
+.logo-wn:hover {
+    transform: scale(1.05);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* พื้นหลัง Gradient + Particles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a0a2e, #1a1a4a, #2d2d6e);
+    z-index: -2;
+}
+
+/* เอฟเฟกต์ Particles */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     /* ใช้ SVG noise แทนภาพ */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    z-index: -1;
+}
+/* Gemini-style floating star icon background */
+.background-circles {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    animation: gemini-float 10s infinite ease-in-out;
+}
+
+.background-circles::before,
+.background-circles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    animation: circle-move 15s infinite ease-in-out;
+}
+
+.background-circles::before {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.background-circles::after {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 70%;
+    animation-delay: 5s;
+}
+
+@keyframes gemini-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes circle-move {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20px, -10px);
+    }
+    50% {
+        transform: translate(-20px, 10px);
+    }
+    75% {
+        transform: translate(10px, -20px);
+    }
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.1; /* ลดความทึบแสงให้โปร่งใสมากขึ้น */
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(rgba(79, 70, 229, 0.5), transparent); /* ใช้สีโปร่งใส */
+    top: 20%;
+    left: 10%;
+    animation: float 12s infinite ease-in-out;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(rgba(219, 39, 119, 0.5), transparent); /* ใช้สีโปร่งใส */
+    top: 60%;
+    left: 70%;
+    animation: float 8s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); } /* ปรับ animation */
+    25% { transform: translateY(-20px) translateX(20px); }
+    50% { transform: translateY(0) translateX(0); }
+    75% { transform: translateY(20px) translateX(-20px); }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-color);
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s ease-out; /* ปรับ transition ให้ smooth ขึ้น */
+}
+
+/* Typewriter Effect for Dynamic Text */
+#typewriter-text {
+    display: inline-block;
+    font-size: 1.5rem; /* ขนาดฟอนต์ */
+    font-weight: bold;
+    color: var(--primary-color);
+    white-space: nowrap; /* ป้องกันข้อความตัดบรรทัด */
+    overflow: hidden; /* ซ่อนข้อความที่เกิน */
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+/* Layout Container */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem 1rem; /* เพิ่ม padding ด้านบนสำหรับ nav คงที่ */
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative; /* สำหรับขีดเส้นใต้ */
+    padding-bottom: 10px; /* ระยะห่างจากขีดเส้นใต้ */
+}
+
+ h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* ความกว้างของขีดเส้นใต้ */
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+
+/* Hero Section (หน้าแรก) */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* About Section (ประวัติส่วนตัว) */
+#about {
+    padding: 4rem 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center; /* จัดแนวตั้ง */
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(98, 0, 234, 0.5);
+}
+
+.personal-info {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 2rem;
+     border-radius: 15px;
+     backdrop-filter: blur(10px);
+}
+
+.personal-info p {
+    margin-bottom: 1rem;
+}
+
+
+/* Education Section (ประวัติการศึกษา) */
+#education {
+    padding: 4rem 0;
+}
+
+.education-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.education-timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-content {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+}
+
+
+.timeline-icon {
+    position: absolute;
+    width: 80px; /* Increased size for image based on the new image */
+    height: px; /* Increased size for image based on the new image */
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid var(--bg-dark); /* Add border to match background */
+    overflow: hidden; /* Hide overflowing parts of the image */
+}
+
+.timeline-icon img {
+    display: block; /* Remove extra space below image */
+    width: 100%; /* Make image fill the container */
+    height: 100%; /* Make image fill the container */
+    object-fit: cover; /* Cover the area without stretching */
+    border-radius: 50%; /* Ensure image is also rounded */
+}
+
+.timeline-item.left .timeline-icon {
+     right: -32px; /* Adjusted position for larger icon */
+     left: auto; /* Ensure left is not set */
+}
+
+.timeline-item.right .timeline-icon {
+    left: -28px; /* Adjusted position for larger icon */
+    right: auto; /* Ensure right is not set */
+}
+
+
+.timeline-icon i {
+    font-size: 1rem; /* Keep icon size if used as fallback */
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* Arrows pointing to the timeline */
+.timeline-item::after {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    z-index: 1;
+}
+
+.timeline-item.left::after {
+    border-left: 7px solid rgba(255, 255, 255, 0.1); /* Arrow color matches content background */
+    right: -16px; /* Position arrow on the right of the left item */
+}
+
+.timeline-item.right::after {
+    border-left: 0;
+    border-right: 7px solid rgba(255, 255, 255, 0.1); /* Arrow color matches content background */
+    left: -16px; /* Position arrow on the left of the right item */
+}
+
+
+/* Projects Section (Projects) */
+#projects {
+    padding: 4rem 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Project Card Style */
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    display: flex; /* Use flexbox for content arrangement */
+    flex-direction: column; /* Arrange vertically */
+    height: 100%; /* Make cards equal height */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 200px; /* Set image height */
+    margin-bottom: 1rem; /* Add spacing */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    flex-grow: 1; /* Make paragraph fill remaining space */
+    margin-bottom: 1rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap; /* Allow tech stack to wrap */
+    gap: 0.5rem;
+    margin-top: auto; /* Push tech stack to the bottom */
+}
+
+.tech {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Certificates Section (Certificates) */
+#certificates {
+    padding: 4rem 0;
+}
+
+.certificate-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted card size */
+     gap: 2rem;
+     margin-top: 2rem;
+}
+
+.certificate-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+     transition: transform 0.3s ease;
+}
+
+ .certificate-item:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+     border: 1px solid rgba(255, 255, 255, 0.2); /* Added subtle border */
+}
+
+ .certificate-item h3 {
+     margin-top: 0;
+     color: var(--primary-color);
+     font-size: 1.2rem;
+ }
+
+
+/* Activities Section (Activities) */
+#activities {
+    padding: 4rem 0;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.activity-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    display: flex; /* Use flexbox to arrange image and text */
+    align-items: center; /* Vertically align center */
+    gap: 1.5rem; /* Add space between image and text */
+}
+
+ .activity-item:hover {
+    transform: translateX(10px); /* Slight movement to the right on hover */
+}
+
+.activity-content-wrapper {
+    display: flex; /* Use flexbox within the item */
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%; /* Make wrapper fill item width */
+    flex-direction: column; /* Default vertical on mobile */
+}
+
+.activity-image {
+    width: 100%; /* Full width image on mobile */
+    max-width: 200px; /* Set max width for the image */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.activity-text {
+    flex-grow: 1; /* Make text fill remaining space */
+}
+
+.activity-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.activity-item p {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Contact Section (Contact) */
+#contact {
+    padding: 4rem 0;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+ .contact-info a {
+     color: var(--primary-color);
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ .contact-info a:hover {
+     color: #9b59b6; /* Lighter purple on hover */
+ }
+
+ .social-links {
+     display: flex;
+     justify-content: center;
+     gap: 1.5rem; /* Adjusted spacing */
+     margin-top: 1.5rem;
+ }
+
+ /* Social Links */
+.social-links a {
+    color: white; /* สีไอคอนปกติ */
+    font-size: 2rem; /* ขนาดไอคอน */
+    background: var(--primary-color); /* เพิ่มพื้นหลัง */
+    padding: 0.8rem; /* เพิ่มพื้นที่รอบไอคอน */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* ขยายไอคอนเมื่อ hover */
+    background: #9b59b6; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    color: white; /* สีไอคอนเมื่อ hover */
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+    /* Arrange image and text horizontally in activities on desktop */
+    .activity-content-wrapper {
+        flex-direction: row;
+    }
+    .activity-image {
+        width: auto; /* Remove width: 100% on desktop */
+    }
+
+    /* Adjust timeline for desktop */
+    .education-timeline::after {
+        left: 50%; /* Center the timeline line */
+        margin-left: -1.5px;
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding: 10px 40px;
+    }
+
+    .timeline-item.left { /* Explicitly position left items */
+        left: 0;
+    }
+
+    .timeline-item.right { /* Explicitly position right items */
+        left: 50%;
+    }
+
+    .timeline-item.left::after {
+        content: " ";
+        position: absolute;
+        top: 22px;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-left: 7px solid rgba(255, 255, 255, 0.1);
+        right: -16px;
+        z-index: 1;
+    }
+
+    .timeline-item.right::after {
+        border-left: 0;
+        border-right: 7px solid rgba(255, 255, 255, 0.1);
+        left: -16px;
+    }
+
+     .timeline-icon {
+        right: -32px; /* Adjusted position for larger icon */
+        left: auto; /* Reset left for odd items */
+    }
+
+    .timeline-item.right .timeline-icon {
+        left: -28px; /* Adjusted position for larger icon */
+        right: auto; /* Reset right for even items */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 5%;
+        position: static; /* Remove fixed navbar on mobile */
+        width: auto;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0.8rem; /* Adjusted spacing on mobile */
+         font-size: 1rem;
+    }
+
+    #hero {
+        height: auto; /* Adjusted hero height on mobile */
+        padding-top: 8rem; /* Added top padding */
+        padding-bottom: 4rem;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Display as a single column on mobile */
+    }
+
+    .about-image img {
+         width: 200px;
+         height: 200px;
+         margin-bottom: 1.5rem;
+    }
+
+    .project-card,
+    .education-item,
+    .certificate-item,
+    .activity-item,
+    .contact-info {
+        padding: 1rem; /* Reduced padding on mobile */
+    }
+
+     h2 {
+         font-size: 2rem; /* Reduced heading size */
+     }
+
+    /* Adjust timeline for mobile - single column */
+    .education-timeline::after {
+        left: 18px; /* Move timeline line to the left */
+    }
+
+    .timeline-item {
+        padding-left: 50px; /* Add padding to the left for content */
+        padding-right: 5px; /* Reduce padding on the right */
+        width: 100%; /* Full width */
+        left: 0; /* Align all items to the left on mobile */
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0; /* Ensure all items are on the left on mobile */
+    }
+
+
+    .timeline-icon {
+        left: 4px; /* Position icon on the left of the timeline line */
+        right: auto; /* Reset right */
+    }
+
+    .timeline-item.left .timeline-icon,
+    .timeline-item.right .timeline-icon {
+         left: 4px; /* Ensure all item icons are on the left on mobile */
+         right: auto; /* Reset right */
+    }
+
+
+    .timeline-item::after {
+        left: 11px; /* Position arrow to the left of the timeline line */
+        border-left: 7px solid rgba(255, 255, 255, 0.1); /* Ensure arrow points right */
+        border-right: 0; /* Remove right border */
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        border-right: 0; /* Remove right border */
+        border-left: 7px solid rgba(255, 255, 255, 0.1); /* Ensure arrow points right */
+        left: 11px; /* Position arrow to the left of the timeline line */
+    }
+}
+
+ @media (max-width: 480px) {
+     .nav-links a {
+         margin: 0.4rem 0.5rem;
+         font-size: 0.9rem;
+     }
+
+     #hero h1 {
+         font-size: 2rem;
+     }
+
+     #hero p {
+         font-size: 1rem;
+     }
+
+     .social-links a {
+         font-size: 1.5rem;
+     }
+ }
+
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #9b59b6;
+}
+    
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.github-link i {
+    font-size: 1.2rem;
+}
+
+.github-link:hover {
+    color: #9b59b6; /* สีเมื่อ hover */
+    transform: translateY(-2px); /* ยกขึ้นเล็กน้อยเมื่อ hover */
+}
+
+#skills {
+    padding: 4rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 4rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bas_Wongsakorn</title>
+    <!-- ลิงก์ฟอนต์จาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- ลิงก์ไอคอนจาก Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- ลิงก์ไฟล์ CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- วงกลมพื้นหลัง -->
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+    <!-- แถบแสดงความคืบหน้าการเลื่อนหน้า -->
+    <div class="scroll-progress"></div>
+    <!-- แถบนำทาง (Navbar) -->
+    <nav class="navbar">
+    <!-- โลโก้ -->
+    <a href="#hero" class="logo-wn">    
+        <div class="dynamic-container">
+            <div class="circle-background"></div>
+            <span id="typewriter-text"></span>
+        </div>
+    </a>
+    <!-- ลิงก์นำทาง -->
+    <div class="nav-links">
+        <a href="#hero" data-lang-th="หน้าแรก" data-lang-en="Home">หน้าแรก</a>
+        <a href="#about" data-lang-th="ประวัติส่วนตัว" data-lang-en="About">ประวัติส่วนตัว</a>
+        <a href="#education" data-lang-th="ประวัติการศึกษา" data-lang-en="Education">ประวัติการศึกษา</a>
+        <a href="#projects" data-lang-th="ผลงาน" data-lang-en="Projects">ผลงาน</a>
+        <a href="#certificates" data-lang-th="เกียรติบัตร" data-lang-en="Certificates">เกียรติบัตร</a>
+        <a href="#activities" data-lang-th="กิจกรรม" data-lang-en="Activities">กิจกรรม</a>
+        <a href="#gallery" data-lang-th="คลังภาพ" data-lang-en="gallery">คลังภาพ</a>
+        <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+    </div>
+    <!-- ปุ่มเปลี่ยนภาษา -->
+    <div class="language-switcher">
+        <button class="lang-btn" id="lang-th" data-lang-th="ไทย" data-lang-en="Thai">ไทย</button>
+        <button class="lang-btn" id="lang-en" data-lang-th="อังกฤษ" data-lang-en="English">ENG</button>
+    </div>
+</nav>
+    
+<!-- ส่วน Hero (หน้าแรก) -->
+<section id="hero">
+    <div class="typewriter">
+        <h1 data-lang-th="ยินดีต้อนรับสู่ Portfolio ของผม" data-lang-en="Welcome to My Portfolio">
+            Welcome to My Portfolio
+        </h1>
+    </div>
+    <p data-lang-th="แสดงผลงานและเรื่องราวของผม" data-lang-en="Showcasing my work and story">
+        Showcasing my work and story
+    </p>
+</section>
+
+<!-- ส่วน About Me (ประวัติส่วนตัว) -->
+<section id="about" class="section-container">
+    <h2 data-lang-th="ประวัติส่วนตัว" data-lang-en="About Me">About Me</h2>
+    <div class="about-content">
+        <div class="about-image">
+            <img src="{13FD6ECB-66C5-4652-B211-9D9E5592ED85}.jpg" alt="Profile Picture">
+        </div>
+        <div class="personal-info">
+            <h3 data-lang-th="ข้อมูลส่วนตัว" data-lang-en="Personal Information">Personal Information</h3>
+            <p><strong data-lang-th="ชื่อ-สกุล:" data-lang-en="Full Name:">Full Name:</strong> 
+               <span data-lang-th="วงศกร นันทะมีชัย" data-lang-en="Wongsakorn Nanthamachai">Wongsakorn Nanthamachai</span>
+            </p>
+            <p><strong data-lang-th="ชื่อเล่น:" data-lang-en="Nickname:">Nickname:</strong> 
+               <span data-lang-th="บาส" data-lang-en="Bas">Bas</span>
+            </p>
+            <p><strong data-lang-th="อายุ:" data-lang-en="Age:">Age:</strong> 
+               <span data-lang-th="17 ปี" data-lang-en="17 years old">17 years old</span>
+            </p>
+            <p><strong data-lang-th="วันเกิด:" data-lang-en="Date of Birth:">Date of Birth:</strong> 
+               <span data-lang-th="3 กันยายน พ.ศ. 2550" data-lang-en="September 3, 2007">September 3, 2007</span>
+            </p>
+            <p><strong data-lang-th="สาขา:" data-lang-en="Field of Study:">Field of Study:</strong> 
+               <span data-lang-th="เทคโนโลยีธุรกิจดิจิทัล" data-lang-en="Digital Business Technology">Digital Business Technology</span>
+            </p>
+            <p><strong data-lang-th="ภูมิลำเนา:" data-lang-en="Hometown:">Hometown:</strong> 
+               <span data-lang-th="อ.เมืองหนองคาย จ.หนองคาย" data-lang-en="Mueang Nong Khai, Nong Khai">Mueang Nong Khai, Nong Khai</span>
+            </p>
+            <p><strong data-lang-th="สถานศึกษาปัจจุบัน:" data-lang-en="Current Institution:">Current Institution:</strong> 
+               <span data-lang-th="วิทยาลัยการอาชีพหนองคาย" data-lang-en="Nong Khai Vocational College">Nong Khai Vocational College</span>
+            </p>
+            <p><strong data-lang-th="ความสนใจ:" data-lang-en="Interests:">Interests:</strong> 
+               <span data-lang-th="สนใจวิทยาการคอมพิวเตอร์และการถ่ายภาพ ซึ่งช่วยเสริมความใส่ใจรายละเอียดและความคิดสร้างสรรค์" 
+                     data-lang-en="Interested in computer science and photography, which enhances attention to detail and creativity">
+                     Interested in computer science and photography, which enhances attention to detail and creativity
+               </span>
+            </p>
+            <p><strong data-lang-th="เกี่ยวกับฉัน:" data-lang-en="About Me:">About Me:</strong> 
+               <span data-lang-th="ผสมผสานทักษะการเขียนโค้ดเพื่อแก้ปัญหา เข้ากับความสามารถในการเล่าเรื่องด้วยภาพถ่าย สร้างสรรค์ผลงานที่น่าสนใจทั้งในเชิงฟังก์ชันและการนำเสนอ" 
+                     data-lang-en="Blending problem-solving skills through coding with the ability for visual storytelling via photography, creating engaging work that is strong in both function and presentation">
+                     [Write a short and interesting summary about yourself]
+               </span>
+            </p>
+            <p><strong data-lang-th="สถานภาพ:" data-lang-en="Status:">Status:</strong> 
+               <span data-lang-th="โสด" data-lang-en="Single">Single</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="section-container">
+    <h2 data-lang-th="ประวัติการศึกษา" data-lang-en="Education">ประวัติการศึกษา</h2>
+    <div class="education-timeline">
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3 data-lang-th="ระดับอนุบาล" data-lang-en="Kindergarten">ระดับอนุบาล</h3>
+                <p data-lang-th="โรงเรียนเทศบาล 4 ฉลองรัตน" data-lang-en="Municipal School 4 Chalorattan">โรงเรียนเทศบาล 4 ฉลองรัตน</p>
+            </div>
+            <div class="timeline-icon">
+                <img src="images/OIP.jpg" alt="School Logo">
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3 data-lang-th="ระดับประถมศึกษา" data-lang-en="Primary School">ระดับประถมศึกษา</h3>
+                <p data-lang-th="โรงเรียนอนุบาลหนองคาย" data-lang-en="Nongkhai Anuban School">โรงเรียนอนุบาลหนองคาย</p>
+            </div>
+            <div class="timeline-icon">
+                <img src="images/ank.jpg" alt="School Logo">
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3 data-lang-th="ระดับมัธยมศึกษาตอนต้น" data-lang-en="Lower Secondary School">ระดับมัธยมศึกษาตอนต้น</h3>
+                <p data-lang-th="โรงเรียนปทุมเทพวิทยาคาร" data-lang-en="Pathumthep Witthayakarn School">โรงเรียนปทุมเทพวิทยาคาร</p>
+            </div>
+            <div class="timeline-icon">
+                <img src="images/PTKLOGOth.png" alt="School Logo">
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3 data-lang-th="ระดับประกาศนียบัตรวิชาชีพ" data-lang-en="Vocational Certificate">ระดับประกาศนียบัตรวิชาชีพ</h3>
+                <p data-lang-th="วิทยาลัยการอาชีพหนองคาย" data-lang-en="NongKhai industrial and Community Education College">วิทยาลัยการอาชีพหนองคาย</p>
+            </div>
+            <div class="timeline-icon">
+                <img src="images/NK-icec1.jpg" alt="School Logo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section-container">
+    <h2 data-lang-th="ผลงาน" data-lang-en="Projects">ผลงาน</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="https://placehold.co/400x200/6200ea/ffffff?text=Project+Image+1" alt="Project 1 Image">
+            <h3 data-lang-th="ชื่อผลงาน 1" data-lang-en="Project Name 1">ชื่อผลงาน 1</h3>
+            <p data-lang-th="คำอธิบายสั้นๆ เกี่ยวกับผลงานนี้ คุณทำอะไรในผลงานนี้ และผลงานนี้เกี่ยวกับอะไร" 
+               data-lang-en="A short description of this project, what you did, and what it is about">
+               คำอธิบายสั้นๆ เกี่ยวกับผลงานนี้ คุณทำอะไรในผลงานนี้ และผลงานนี้เกี่ยวกับอะไร
+            </p>
+            <div class="tech-stack">
+                <span class="tech" data-lang-th="HTML" data-lang-en="HTML">HTML</span>
+                <span class="tech" data-lang-th="CSS" data-lang-en="CSS">CSS</span>
+                <span class="tech" data-lang-th="JavaScript" data-lang-en="JavaScript">JavaScript</span>
+            </div>
+            <!-- ปุ่ม GitHub รองรับสองภาษา -->
+            <a href="https://github.com/YOUR_GITHUB_REPO_1" target="_blank" class="github-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> 
+                <span data-lang-th="ดูโปรเจกต์บน GitHub" data-lang-en="View Project on GitHub">ดูโปรเจกต์บน GitHub</span>
+            </a>
+        </div>
+        <div class="project-card">
+            <img src="https://placehold.co/400x200/6200ea/ffffff?text=Project+Image+2" alt="Project 2 Image">
+            </p>
+            <p data-lang-th="คำอธิบายสั้นๆ เกี่ยวกับผลงานนี้ คุณทำอะไรในผลงานนี้ และผลงานนี้เกี่ยวกับอะไร" 
+               data-lang-en="A short description of this project, what you did, and what it is about">
+               คำอธิบายสั้นๆ เกี่ยวกับผลงานนี้ คุณทำอะไรในผลงานนี้ และผลงานนี้เกี่ยวกับอะไร
+            </p>
+            <div class="tech-stack">
+                <span class="tech" data-lang-th="Python" data-lang-en="Python">Python</span>
+                <span class="tech" data-lang-th="การวิเคราะห์ข้อมูล" data-lang-en="Data Analysis">Data Analysis</span>
+            </div>
+            <!-- ปุ่ม GitHub รองรับสองภาษา -->
+            <a href="https://github.com/YOUR_GITHUB_REPO_2" target="_blank" class="github-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> 
+                <span data-lang-th="ดูโปรเจกต์บน GitHub" data-lang-en="View Project on GitHub">ดูโปรเจกต์บน GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="certificates" class="section-container">
+    <h2 data-lang-th="เกียรติบัตร" data-lang-en="Certificates">เกียรติบัตร</h2>
+    <div class="certificate-grid">
+        <div class="certificate-item">
+            <img src="https://placehold.co/300x400/0f0f0f/6200ea?text=Certificate+1" alt="Certificate 1">
+            <h3 data-lang-th="ชื่อเกียรติบัตร 1" data-lang-en="Certificate Name 1">ชื่อเกียรติบัตร 1</h3>
+            <p data-lang-th="รายละเอียดสั้นๆ เกี่ยวกับเกียรติบัตร" data-lang-en="A short description of the certificate">
+                รายละเอียดสั้นๆ เกี่ยวกับเกียรติบัตร
+            </p>
+        </div>
+        <div class="certificate-item">
+            <img src="https://placehold.co/300x400/0f0f0f/6200ea?text=Certificate+2" alt="Certificate 2">
+            <h3 data-lang-th="ชื่อเกียรติบัตร 2" data-lang-en="Certificate Name 2">ชื่อเกียรติบัตร 2</h3>
+            <p data-lang-th="รายละเอียดสั้นๆ เกี่ยวกับเกียรติบัตร" data-lang-en="A short description of the certificate">
+                รายละเอียดสั้นๆ เกี่ยวกับเกียรติบัตร
+            </p>
+        </div>
+    </div>
+</section>
+
+ <section id="activities" class="section-container">
+    <h2 data-lang-th="กิจกรรม" data-lang-en="Activities">กิจกรรม</h2>
+    <ul class="activity-list">
+        <li class="activity-item">
+            <div class="activity-content-wrapper">
+                <img src="https://placehold.co/300x200/0f0f0f/6200ea?text=Activity+Image+1" alt="Activity 1 Image" class="activity-image">
+                <div class="activity-text">
+                    <h3 data-lang-th="ชื่องาน/กิจกรรม 1" data-lang-en="Activity Name 1">ชื่องาน/กิจกรรม 1</h3>
+                    <p><strong data-lang-th="บทบาท:" data-lang-en="Role:">บทบาท:</strong> 
+                        <span data-lang-th="บทบาทของคุณในกิจกรรม" data-lang-en="Your role in the activity">บทบาทของคุณในกิจกรรม</span>
+                    </p>
+                    <p><strong data-lang-th="ระยะเวลา:" data-lang-en="Duration:">ระยะเวลา:</strong> 
+                        <span data-lang-th="ช่วงเวลาที่ทำกิจกรรม" data-lang-en="The duration of the activity">ช่วงเวลาที่ทำกิจกรรม</span>
+                    </p>
+                    <p><strong data-lang-th="รายละเอียด:" data-lang-en="Details:">รายละเอียด:</strong> 
+                        <span data-lang-th="สิ่งที่คุณได้ทำและเรียนรู้จากกิจกรรมนี้" data-lang-en="What you did and learned from this activity">สิ่งที่คุณได้ทำและเรียนรู้จากกิจกรรมนี้</span>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="activity-item">
+            <div class="activity-content-wrapper">
+                <img src="https://placehold.co/300x200/0f0f0f/6200ea?text=Activity+Image+2" alt="Activity 2 Image" class="activity-image">
+                <div class="activity-text">
+                    <h3 data-lang-th="ชื่องาน/กิจกรรม 2" data-lang-en="Activity Name 2">ชื่องาน/กิจกรรม 2</h3>
+                    <p><strong data-lang-th="บทบาท:" data-lang-en="Role:">บทบาท:</strong> 
+                        <span data-lang-th="บทบาทของคุณในกิจกรรม" data-lang-en="Your role in the activity">บทบาทของคุณในกิจกรรม</span>
+                    </p>
+                    <p><strong data-lang-th="ระยะเวลา:" data-lang-en="Duration:">ระยะเวลา:</strong> 
+                        <span data-lang-th="ช่วงเวลาที่ทำกิจกรรม" data-lang-en="The duration of the activity">ช่วงเวลาที่ทำกิจกรรม</span>
+                    </p>
+                    <p><strong data-lang-th="รายละเอียด:" data-lang-en="Details:">รายละเอียด:</strong> 
+                        <span data-lang-th="สิ่งที่คุณได้ทำและเรียนรู้จากกิจกรรมนี้" data-lang-en="What you did and learned from this activity">สิ่งที่คุณได้ทำและเรียนรู้จากกิจกรรมนี้</span>
+                    </p>
+                </div>
+            </div>  
+        </li>
+    </ul>
+</section>
+<section id="activities" class="section-container">
+    <h2 data-lang-th="คลังภาพ" data-lang-en="Gallery">คลังภาพ</h2>
+    <ul class="activity-list">
+                <section id="gallery" class="section-container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://placehold.co/300x200/6200ea/ffffff?text=Photo+1" alt="Photo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/300x200/6200ea/ffffff?text=Photo+2" alt="Photo 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/300x200/6200ea/ffffff?text=Photo+3" alt="Photo 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/300x200/6200ea/ffffff?text=Photo+4" alt="Photo 4">
+                </div>
+            </div>
+        </section>
+<section id="contact" class="section-container">
+    <h2 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h2>
+    <div class="contact-info">
+        <p data-lang-th="หากสนใจหรือมีข้อสงสัย สามารถติดต่อฉันได้ที่:" data-lang-en="If you are interested or have any questions, you can contact me at:">
+            หากสนใจหรือมีข้อสงสัย สามารถติดต่อฉันได้ที่:
+        </p>
+        <p><strong data-lang-th="อีเมล:" data-lang-en="Email:">อีเมล:</strong> 
+            <a href="mailto:wongsakornnanthamachai@gmail.com">wongsakornnanthamachai@gmail.com</a>
+        </p>
+        <p><strong data-lang-th="เบอร์โทรศัพท์:" data-lang-en="Phone:">เบอร์โทรศัพท์:</strong> 
+            +66 0834658766
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/wongsakorn.nanthamechai" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="[ลิงก์ Twitter]" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bas_wsk_ntmc/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[ลิงก์ Line ของคุณ เช่น https://line.me/ti/p/YOUR_LINE_ID]" target="_blank" aria-label="Line"><i class="fab fa-line"></i></a>
+            <a href="https://github.com/Pongpani" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Wongsakorn nanthamechai. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
